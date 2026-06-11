@@ -1,0 +1,10 @@
+{
+  "name": "CarTrust AI",
+  "description": "Smart Used Car Verification & Maintenance Prediction System. Analyze condition, price validation, fraud risks, and predict maintenance costs.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

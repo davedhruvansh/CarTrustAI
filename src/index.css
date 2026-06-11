@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom print formatting rules for certified PDF report layouts */
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-family: "Inter", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Hide raw interactive navigation and action headers during export */
+  .border-b, nav, header, button, select, input {
+    display: none !important;
+  }
+
+  /* Force print targets to occupy full widths nicely */
+  main, .max-w-7xl, .lg\:col-span-2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  /* Grid layout adaptation for paper layouts */
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Force individual analytical cards to remain compact and clean */
+  .border {
+    border: 1px solid #e5e7eb !important;
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    border-radius: 0.75rem !important;
+    page-break-inside: avoid !important;
+    padding: 1.25rem !important;
+  }
+
+  .bg-slate-900\/40, .bg-slate-900\/10, .bg-slate-950\/60, .bg-slate-950 {
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    color: #111827 !important;
+  }
+
+  .text-white, .text-slate-100, .text-slate-200, .text-slate-300 {
+    color: #111827 !important;
+  }
+
+  .text-slate-400, .text-slate-500 {
+    color: #4b5563 !important;
+  }
+
+  /* Set absolute dimensions on printing margins */
+  @page {
+    margin: 1.8cm 1.5cm;
+  }
+}
